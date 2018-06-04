@@ -8,4 +8,14 @@
 <a href = '/home/destroy/<%=x.id%>' style ='text-decoration:none;'>삭제</a><br>
 <a href = '/home/edit/<%=x.id%>' style='text-decoration:none;'>수정</a><br>
 <hr>
+<form action='/posts/<%=x.id%>/comments/create' method="POST">
+    <textarea name ="content"></textarea>
+    <input type="submit" value="댓글쓰기"></br>
+</form>    
+
+<%x.comments.each do |comments|%>
+<%=comments.content%> <a href="/posts/<%=x.id%>/comments/<%=comments.id%>">[삭제]</a>
+<br>
+<%end%>
+
 <%end%>

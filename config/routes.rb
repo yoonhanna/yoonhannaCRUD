@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   root 'home#index'
   
   get 'home/index'
@@ -68,4 +72,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  post '/posts/:post_id/comments/create'=>'comments#create'
+  get '/posts/:post_id/comments/:comments_id'=>'comments#destroy'
 end

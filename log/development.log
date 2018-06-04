@@ -1,0 +1,1346 @@
+  [1m[36m (13.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20180430165429)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180430165429"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+Migrating to CreateComments (20180531091237)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "post_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180531091237"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 61.79.155.3 at 2018-05-31 09:18:53 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1249ms (Views: 1235.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 61.79.155.3 at 2018-05-31 09:18:54 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 61.79.155.3 at 2018-05-31 09:18:54 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 61.79.155.3 at 2018-05-31 09:18:54 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 61.79.155.3 at 2018-05-31 09:18:55 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 61.79.155.3 at 2018-05-31 09:18:55 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 61.79.155.3 at 2018-05-31 09:18:55 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 61.79.155.3 at 2018-05-31 09:18:55 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/rails_db" for 61.79.155.3 at 2018-05-31 09:19:41 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/rails_db"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.9ms)
+
+
+Started GET "/rails/db" for 61.79.155.3 at 2018-05-31 09:19:51 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::DashboardController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_header.html.erb (24.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_sidebar.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_gems.html.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_footer.html.erb (9.3ms)
+Completed 200 OK in 201ms (Views: 199.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/rails_db/foundation.min.self-35376cedab550837a894b5336dc978e65c7880960efa135709a5f5c02d874077.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror.self-6a14f4765e5eb8280c11af3cbce58685d2604c895fd3ce66592454f751edb002.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/foundation_and_overrides.self-3ccd736cd08a959a4135aca3c292b61c4263dacb5fd257c834c31948ac0c25af.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror/addons/hint/show-hint.self-5139c4701e80b3eefc9588f1a124ba6784b5a556ae73ea6c3b83f498e2893e12.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/app.self-b331ca9582b79bd9a25264b637023ad691d5931d04d9092d2cec11be6144dfbe.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/sidebar.self-d3f51ad8fa16ad94b2afbb5d6a7694bda3ca1c24f66d49d9149bb79d5f81a342.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/pagination.self-867fc87d1ee39b7eda707fd25bb2e714f9baa2066b82755d3cec931d631158f0.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/table.self-014b469574a6ad9479d2cc6bb1e8075ec00a27d7527c6aef59a2870ef8d55065.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/forms.self-834ca1245cba2d14f46c665e2b8e8fdfd3c47074aad19a29397ad3b27888bfda.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/search.self-c6c9c68c2d631a53e8ac3de118d1982a67047ae68c829fb4c4bec025c27bdbb6.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/application.self-cda66a0458c81c95421b4ab1ee6d3677515cb88281771f4fcf49a3b797242381.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/jquery.cookie.self-4d5cd589b27840dd1b295c58c942f063418200fb1ace98b75af7f8fe7510b1c4.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/jquery.self-531d4cb884ed45ea19381d13707d3eb4ba477ceac524282cb603ffcc6e968b3f.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/rails-ujs.self-95f602627c72029ef2161871d586b93da2529f9020d3a8a62ff184732c88ebbf.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/foundation.min.self-57f8cdb550b449186f2342f00dcd6859db87afd5c60340fa73aaba5b9666a565.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/sticky.self-5ca38640b18fe8975e088b1ee592652571991a97f40d8ac0e127320f7593bd19.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/show_hide_columns.self-ed04f36ffccb5272a74100e4ca750191641c530c3fabf6b5565af075e08cc23c.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/search.self-77a0ff826fe4b19b86c2766c9dc1f58936d08266d19b623aadb92d0b729ad0b3.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror.self-ce134e372d984fe4e9e1548e3442b5f4caf908f610337dd20f97392a8bce3551.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror/modes/sql.self-d9855b9d7ac2cf16a9fa675981787e13a6b70c50f8bb179a3224d484c8f45072.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror/addons/hint/show-hint.self-b92af6c2a5eb1e8653ab3fe78da7d7c5737af1e2d83771a316bf0368cc2a268a.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror/themes/pastel-on-dark.self-3bc2071874ad126a3e5ecc5ece5ae77151c1dc358e77c483863ef2c323c0f8cb.css?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/codemirror/addons/hint/sql-hint.self-d7040867fda791b0eeab95b31428288e97572ae92ab80ccd9022839672228967.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/application.self-c62d31091f60357d37422398400b64079b7003d006927fb5fd95d615bc5f88a7.js?body=1" for 61.79.155.3 at 2018-05-31 09:19:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/logo_mini-a0c1f83613bce7afc7554ddec7cc4627b1682b802fc6fe0b56c755c9536ad869.png" for 61.79.155.3 at 2018-05-31 09:19:53 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rails_db/logo-59fa16b8a4541ba856b0be60e8d9e935ea790c7d43ad29181ff8cd5794461428.png" for 61.79.155.3 at 2018-05-31 09:19:53 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/rails/db" for 61.79.155.3 at 2018-05-31 09:47:17 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::DashboardController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/dashboard/index.html.erb within layouts/rails_db/application (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_header.html.erb (14.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_sidebar.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_gems.html.erb (0.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_footer.html.erb (8.7ms)
+Completed 200 OK in 243ms (Views: 241.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 61.79.155.3 at 2018-05-31 09:47:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 112ms (Views: 96.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 61.79.155.3 at 2018-05-31 09:47:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 61.79.155.3 at 2018-05-31 09:47:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/new" for 61.79.155.3 at 2018-05-31 09:47:31 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#new as HTML
+  Rendered home/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/create" for 61.79.155.3 at 2018-05-31 09:47:35 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#create as HTML
+  Parameters: {"post_title"=>"dd", "post_content"=>"dd"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dd"], ["content", "dd"], ["created_at", "2018-05-31 09:47:35.300116"], ["updated_at", "2018-05-31 09:47:35.300116"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 28ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 09:47:35 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 09:59:33 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+NoMethodError (undefined method `post' for main:Object):
+  config/routes.rb:76:in `<top (required)>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:18 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/ubuntu/workspace/config/routes.rb:77: syntax error, unexpected $undefined, expecting end-of-input):
+  config/routes.rb:77: syntax error, unexpected $undefined, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered home/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:38 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/destroy/1" for 61.79.155.3 at 2018-05-31 10:00:39 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#destroy as HTML
+  Parameters: {"post_id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 1]]
+  [1m[36m (16.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 26ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:39 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/new" for 61.79.155.3 at 2018-05-31 10:00:41 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#new as HTML
+  Rendered home/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/create" for 61.79.155.3 at 2018-05-31 10:00:43 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#create as HTML
+  Parameters: {"post_title"=>"hf", "post_content"=>"fgh"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "hf"], ["content", "fgh"], ["created_at", "2018-05-31 10:00:43.519339"], ["updated_at", "2018-05-31 10:00:43.519339"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 18ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:43 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/destroy/2" for 61.79.155.3 at 2018-05-31 10:00:51 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#destroy as HTML
+  Parameters: {"post_id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 2]]
+  [1m[36m (14.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 17ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:51 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home/new" for 61.79.155.3 at 2018-05-31 10:00:53 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#new as HTML
+  Rendered home/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/create" for 61.79.155.3 at 2018-05-31 10:00:56 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#create as HTML
+  Parameters: {"post_title"=>"ll", "post_content"=>"ll"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "ll"], ["content", "ll"], ["created_at", "2018-05-31 10:00:56.329395"], ["updated_at", "2018-05-31 10:00:56.329395"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 18ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:00:57 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:01:33 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:03:42 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts/3comments/create" for 61.79.155.3 at 2018-05-31 10:03:45 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/posts/3comments/create"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.7ms)
+
+
+Started POST "/posts/3comments/create" for 61.79.155.3 at 2018-05-31 10:04:32 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/posts/3comments/create"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.1ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:04:48 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/3/comments/create" for 61.79.155.3 at 2018-05-31 10:04:50 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"ll", "post_id"=>"3"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant CommentsController::Comments):
+  app/controllers/comments_controller.rb:3:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:05:43 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts/3/comments/create" for 61.79.155.3 at 2018-05-31 10:05:45 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"ff", "post_id"=>"3"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("content", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "ff"], ["post_id", 3], ["created_at", "2018-05-31 10:05:45.476798"], ["updated_at", "2018-05-31 10:05:45.476798"]]
+  [1m[35m (14.2ms)[0m  commit transaction
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 20ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:05:45 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:06:12 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts/3/comments/create" for 61.79.155.3 at 2018-05-31 10:06:18 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"fffffff", "post_id"=>"3"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("content", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "fffffff"], ["post_id", 3], ["created_at", "2018-05-31 10:06:18.758613"], ["updated_at", "2018-05-31 10:06:18.758613"]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 16ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:06:18 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts/3/comments/create" for 61.79.155.3 at 2018-05-31 10:06:24 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"dddddddd", "post_id"=>"3"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("content", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "dddddddd"], ["post_id", 3], ["created_at", "2018-05-31 10:06:24.137849"], ["updated_at", "2018-05-31 10:06:24.137849"]]
+  [1m[35m (12.9ms)[0m  commit transaction
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 17ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:06:24 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/new" for 61.79.155.3 at 2018-05-31 10:06:26 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#new as HTML
+  Rendered home/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/create" for 61.79.155.3 at 2018-05-31 10:06:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#create as HTML
+  Parameters: {"post_title"=>"aaaaaaaa", "post_content"=>"aaaaaa"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "aaaaaaaa"], ["content", "aaaaaa"], ["created_at", "2018-05-31 10:06:28.575132"], ["updated_at", "2018-05-31 10:06:28.575132"]]
+  [1m[36m (13.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 28ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:06:28 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts/3/comments/create" for 61.79.155.3 at 2018-05-31 10:06:32 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"content"=>"aaaaaaaaa", "post_id"=>"3"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("content", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "aaaaaaaaa"], ["post_id", 3], ["created_at", "2018-05-31 10:06:32.200755"], ["updated_at", "2018-05-31 10:06:32.200755"]]
+  [1m[36m (13.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 17ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:06:32 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/db/tables/comments/data" for 61.79.155.3 at 2018-05-31 10:06:54 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"comments"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (47.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (8.1ms)
+  [1m[35m Load (0.4ms)[0m  SELECT  "comments".* FROM "comments" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (166.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (170.2ms)
+Completed 200 OK in 202ms (Views: 174.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/rails/db/tables/posts/data" for 61.79.155.3 at 2018-05-31 10:06:56 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"posts"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (8.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (7.3ms)
+  [1m[35m Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (54.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (57.1ms)
+Completed 200 OK in 86ms (Views: 60.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rails/db/tables/comments/data" for 61.79.155.3 at 2018-05-31 10:06:59 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"comments"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (22.8ms)
+  [1m[35m Load (0.5ms)[0m  SELECT  "comments".* FROM "comments" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (82.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (85.2ms)
+Completed 200 OK in 114ms (Views: 86.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/rails/db/tables/posts/data" for 61.79.155.3 at 2018-05-31 10:07:01 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"posts"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (8.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (8.5ms)
+  [1m[35m Load (0.6ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (59.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (62.1ms)
+Completed 200 OK in 179ms (Views: 153.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/rails/db/tables/comments/data" for 61.79.155.3 at 2018-05-31 10:07:03 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"comments"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (11.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (10.9ms)
+  [1m[35m Load (0.3ms)[0m  SELECT  "comments".* FROM "comments" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (17.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (118.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (123.2ms)
+Completed 200 OK in 164ms (Views: 126.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/rails/db/tables/posts/data" for 61.79.155.3 at 2018-05-31 10:07:04 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"posts"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (12.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (21.8ms)
+  [1m[35m Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (95.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (99.2ms)
+Completed 200 OK in 133ms (Views: 104.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/rails/db/tables/comments/data" for 61.79.155.3 at 2018-05-31 10:07:05 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RailsDb::TablesController#data as JS
+  Parameters: {"table_id"=>"comments"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments"[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/shared/_exp_col.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (18.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_condition_fields.html.erb (15.0ms)
+  [1m[35m Load (0.5ms)[0m  SELECT  "comments".* FROM "comments" LIMIT 25 OFFSET 0
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_row.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_sql.html.erb (0.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/_data.html.erb (110.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/rails_db-1.6.0/app/views/rails_db/tables/data.js.erb (114.4ms)
+Completed 200 OK in 157ms (Views: 117.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:09:08 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (44.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x007fed48044948>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comments.content%><br> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <%end%>
+    19: 
+    20: <%end%>
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328546080840'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328546080840'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328546080840'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.6ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:10:52 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (56.8ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x0000000403a418>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comments.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_33610000'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_33610000'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_33610000'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:11:19 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (56.7ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x007fed5d7c9ca8>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comment.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328726180320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:15:53 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (42.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x007fed5e055458>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comment.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328726180320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.2ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:15:57 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (38.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x007fed58264da8>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comment.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328726180320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.9ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:16:16 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (42.6ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x007fed5849fc08>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comment.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328726180320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.8ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:16:27 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  Rendered home/index.html.erb within layouts/application (51.0ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007fed587103e8>:0x000000043b21b8>
+Did you mean?  comments):
+    14: </form>    
+    15: 
+    16: <%x.comments.each do |comments|%>
+    17: <%=comment.content%> <a href="/posts/<%x.id%>/comments/<%comment.id%>">[삭제]</a>
+    18: <br>
+    19: <%end%>
+    20: 
+  app/views/home/index.html.erb:17:in `block (2 levels) in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:16:in `block in _app_views_home_index_html_erb___1325853680653232862_70328726180320'
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___1325853680653232862_70328726180320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:17:30 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:17:37 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:19:14 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:19:16 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:21:31 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:21:33 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (45.7ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:22:10 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 67ms (Views: 60.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:22:11 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.8ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:22:50 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.9ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:22:54 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts//comments/" for 61.79.155.3 at 2018-05-31 10:23:11 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/posts/comments"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.4/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.8ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:23:13 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:23:22 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3/comments/1" for 61.79.155.3 at 2018-05-31 10:23:23 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"3", "comments_id"=>"1"}
+  [1m[35mComment Load (0.3ms)[0m  SELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = ?  [["id", 1]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 16ms (ActiveRecord: 13.4ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:23:23 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 65ms (Views: 64.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/3/comments/2" for 61.79.155.3 at 2018-05-31 10:23:25 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id"=>"3", "comments_id"=>"2"}
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  [1m[35m (14.8ms)[0m  commit transaction
+Redirected to https://hanna31-yunhanna.c9users.io/home/index
+Completed 302 Found in 18ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/home/index" for 61.79.155.3 at 2018-05-31 10:23:25 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 61.79.155.3 at 2018-06-04 08:45:04 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 785ms (Views: 757.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 61.79.155.3 at 2018-06-04 08:51:10 +0000
+Cannot render console from 61.79.155.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
